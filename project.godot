@@ -25,6 +25,10 @@ window/snap/snap_2d_vertices_to_pixel=false
 window/snap/snap_2d_transforms_to_pixel=false
 window/quality/msaa_2d=0
 
+[dotnet]
+
+project/assembly_name="dungeonlike"
+
 [input]
 
 move_up={
