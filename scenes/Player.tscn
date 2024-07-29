@@ -1,11 +1,11 @@
-[gd_scene load_steps=83 format=3 uid="uid://dwvhrqya8oni6"]
+[gd_scene load_steps=84 format=3 uid="uid://dwvhrqya8oni6"]
 
 [ext_resource type="Script" path="res://scripts/player/Movement.gd" id="1_xpybe"]
 [ext_resource type="Texture2D" uid="uid://hf1uj2asoss6" path="res://sprites/animations/player/idle_spritesheet.png" id="2_p2u7h"]
 [ext_resource type="Texture2D" uid="uid://byecvjqnejgo5" path="res://sprites/animations/player/run_spritesheet.png" id="3_mjtyr"]
 [ext_resource type="Script" path="res://scripts/player/FSM.gd" id="4_h7ng6"]
-[ext_resource type="Script" path="res://scripts/player/Idle_state.gd" id="5_kvec1"]
-[ext_resource type="Script" path="res://scripts/player/Move_state.gd" id="6_cfsyw"]
+[ext_resource type="Script" path="res://scripts/player/MoveState.gd" id="5_hi15g"]
+[ext_resource type="Script" path="res://scripts/player/IdleState.gd" id="6_0khoc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0p6s"]
 atlas = ExtResource("2_p2u7h")
@@ -595,6 +595,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxint"]
+size = Vector2(9, 7)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xpybe")
 MAX_SPEED = 100
@@ -607,12 +610,16 @@ animation = &"idle_E"
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_h7ng6")
-initial_state = NodePath("Idle_state")
+initial_state = NodePath("IdleState")
 
-[node name="Move_state" type="Node" parent="FSM" node_paths=PackedStringArray("sprite")]
-script = ExtResource("6_cfsyw")
+[node name="MoveState" type="Node" parent="FSM" node_paths=PackedStringArray("sprite")]
+script = ExtResource("5_hi15g")
 sprite = NodePath("../../Animations")
 
-[node name="Idle_state" type="Node" parent="FSM" node_paths=PackedStringArray("sprite")]
-script = ExtResource("5_kvec1")
+[node name="IdleState" type="Node" parent="FSM" node_paths=PackedStringArray("sprite")]
+script = ExtResource("6_0khoc")
 sprite = NodePath("../../Animations")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 10.5)
+shape = SubResource("RectangleShape2D_wxint")
