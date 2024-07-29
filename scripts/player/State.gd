@@ -1,7 +1,7 @@
 extends Node
 class_name State
 
-var fsm: Finite_state_machine
+var fsm : FSM
 
 func enter():
 	pass

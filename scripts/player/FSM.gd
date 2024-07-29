@@ -1,5 +1,5 @@
 extends Node
-class_name Finite_state_machine
+class_name FSM
 
 
 var current_state : State
