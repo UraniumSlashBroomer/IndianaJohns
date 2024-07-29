@@ -3,11 +3,11 @@ class_name State
 
 var fsm: Finite_state_machine
 
-func Enter():
+func enter():
 	pass
 	
-func Exit():
+func exit():
 	pass
 
-func Update(_delta: float):
+func _process(_delta: float):
 	pass

@@ -16,18 +16,13 @@ func _ready():
 	change_state(initial_state.name)
 
 
-func _process(delta):
-	if current_state:
-		current_state.Update(delta)
-
-
 func change_state(new_state_name: String):
 	var new_state = states[new_state_name]
 	
 	if current_state:
-		current_state.Exit()
+		current_state.exit()
 	
-	new_state.Enter()
+	new_state.enter()
 	
 	current_state = new_state
 
