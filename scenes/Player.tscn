@@ -600,9 +600,7 @@ size = Vector2(9, 7)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xpybe")
-MAX_SPEED = 100
 FRICTION = 150.0
-ACCELERATION = 300
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_baind")
