@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgk466m5pc1mm"]
+[gd_scene load_steps=3 format=3 uid="uid://bgk466m5pc1mm"]
 
+[ext_resource type="Script" path="res://scripts/procedural_generation/room.gd" id="1_3fst8"]
 [ext_resource type="TileSet" uid="uid://clwjip3ypskuu" path="res://resources/temp_tileset.tres" id="1_wa02d"]
 
 [node name="Room" type="Node2D"]
+script = ExtResource("1_3fst8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_wa02d")

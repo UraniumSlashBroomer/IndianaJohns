@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://buov4npjew3xo"]
+[gd_scene load_steps=2 format=3 uid="uid://buov4npjew3xo"]
+
+[ext_resource type="Script" path="res://scripts/procedural_generation/generator.gd" id="1_brpex"]
 
 [node name="GenerationTest" type="Node2D"]
+script = ExtResource("1_brpex")
+grid_size_x = null
+grid_size_y = null
