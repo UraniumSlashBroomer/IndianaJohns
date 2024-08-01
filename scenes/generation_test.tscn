@@ -4,5 +4,5 @@
 
 [node name="GenerationTest" type="Node2D"]
 script = ExtResource("1_brpex")
-grid_size_x = null
-grid_size_y = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
