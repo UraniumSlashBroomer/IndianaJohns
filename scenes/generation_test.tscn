@@ -4,10 +4,10 @@
 
 [node name="GenerationTest" type="Node2D"]
 script = ExtResource("1_brpex")
-grid_size = Vector2i(60, 60)
+grid_size = Vector2i(100, 100)
 roomcnt = 10
-min_space_between_rooms = 2
-rooms_paths = Array[String](["res://scenes/rooms/room1.tscn", "res://scenes/rooms/room2.tscn"])
+max_bad_tries = 100000
+rooms_paths = Array[String](["res://scenes/rooms/room1.tscn", "res://scenes/rooms/room2.tscn", "res://scenes/rooms/room3.tscn"])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)

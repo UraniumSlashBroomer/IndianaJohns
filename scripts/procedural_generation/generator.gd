@@ -1,4 +1,5 @@
 extends Node2D
+class_name RoomGenerator
 
 @export var unit_size : int = 16
 @export var grid_size : Vector2i
@@ -6,6 +7,7 @@ extends Node2D
 @export var min_space_between_rooms = 5
 @export var max_bad_tries = 10000
 @export var rooms_paths : Array[String]
+
 var available_rooms : Array[PackedScene]
 var placed_rooms : Array[Room]
 
@@ -77,7 +79,6 @@ func is_overlap(pos : Vector2i, size : Vector2i) -> bool:
 		or l <= left and l >= right:
 			return true
 
-
 	return false
 
 
@@ -88,3 +89,4 @@ func get_random_room() -> PackedScene:
 func load_available_scenes() -> void:
 	for path in rooms_paths:
 		available_rooms.append(load(path))
+
